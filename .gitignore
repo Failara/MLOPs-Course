@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+venv/
+.venv/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files
+*.csv
+
+# Models
+*.pkl
+
+# MLflow
+mlruns/
+mlartifacts/
