@@ -1,5 +1,0 @@
-outs:
-- md5: 25593ccd987cc8854bf6dfea5ff74e4f
-  size: 136986
-  hash: md5
-  path: best_heart_pipeline.pkl
