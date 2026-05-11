@@ -3,13 +3,11 @@ from fastapi.testclient import TestClient
 from ml.train import train_and_save
 from app.main import app, MODEL_PATH
 
-# Гарантуємо існування файлу моделі перед запуском API-тестів
 if not MODEL_PATH.exists():
     train_and_save(MODEL_PATH)
 
 @pytest.fixture(scope="module")
 def client():
-    # Використання with автоматично запускає lifespan (завантаження моделі)
     with TestClient(app) as c:
         yield c
 

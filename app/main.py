@@ -13,13 +13,11 @@ model = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Код, що виконується при старті сервера (завантаження моделі)
     global model
     if not MODEL_PATH.exists():
         raise RuntimeError(f"Model file not found: {MODEL_PATH}")
     model = joblib.load(MODEL_PATH)
     yield
-    # Код, що виконується при зупинці сервера
     model = None
 
 app = FastAPI(

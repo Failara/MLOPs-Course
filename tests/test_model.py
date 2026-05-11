@@ -15,4 +15,4 @@ def test_model_predicts_three_classes(tmp_path: Path):
     model = joblib.load(model_file)
     sample = [[5.1, 3.5, 1.4, 0.2]]
     pred = model.predict(sample)
-    assert pred[0] in (0, 1, 2), "Клас має бути одним із 0/1/2"
+    assert pred[0] in (0, 1, 2), "Прогноз має бути одним з трьох класів (0, 1, 2)"
